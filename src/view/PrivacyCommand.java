@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class MainFrame {
+public class PrivacyCommand {
 
 	public static void main(String[] args) {
 		JPanel gamePanel = new JPanel(new GridBagLayout());
@@ -48,8 +48,8 @@ public class MainFrame {
 		frame.setContentPane(gamePanel);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
-		frame.setExtendedState(frame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
-		frame.pack();
+		frame.setSize(512, 600);
+		frame.setResizable(false);
 		frame.setVisible(true);
 
 		new Thread(space).start();
