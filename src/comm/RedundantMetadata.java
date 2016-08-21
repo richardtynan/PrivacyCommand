@@ -13,7 +13,7 @@ public class RedundantMetadata extends Metadata {
 	}
 	
 	public Color getColor() {
-		return Color.CYAN;
+		return Color.ORANGE;
 	}
 
 	public boolean isRedundant() {
