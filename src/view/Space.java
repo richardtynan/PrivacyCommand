@@ -46,6 +46,15 @@ public class Space extends JPanel implements MouseInputListener, Runnable {
 	
 	private String label_crit = "Critical (blue+green):";
 	private String label_red = "Redundant (orange+yellow):";
+
+	public int getSpawnAmount() {
+		return this.spawnAmount;
+	}
+	
+	public void setSpawnAmount(int newSpawnAmount) {
+		this.spawnAmount = newSpawnAmount;	
+	}
+	
 	
 	public Space() {
 		this.setLayout(new GridLayout(grid, grid));
@@ -86,6 +95,7 @@ public class Space extends JPanel implements MouseInputListener, Runnable {
 	}
 
 	public void run() {
+		
 		int contentGen = 0;
 		int metadataGen = 0;
 		int spawn = 0;
