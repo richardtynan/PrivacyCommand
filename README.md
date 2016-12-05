@@ -14,9 +14,9 @@ PrivacyCommand is a game to that demonstrates how we all constantly generate per
 
 Anytime you use the Internet, whether it is a computer, smartphone, tablet or other connected device, you are generating meta data. Meta data is data about our data. If this sounds like a familiar meme, allow me:
 
-<center>![Yo dawg](img/yodawg.png)</center>
+![Yo dawg](img/yodawg.png)
 
-Some [examples of meta data](https://en.wikipedia.org/wiki/meta data#Definition) include:
+Some [examples of meta data](https://en.wikipedia.org/wiki/Metadata#Definition) include:
 
 + Purpose of the data
 + Time and date of creation
@@ -43,7 +43,7 @@ _Data leakage is everywhere! In this game, the squares represent both critical d
 
 Clicking on the game info will provide more information:
 
-<center>![Screen cap](img/screenshot.png)</center>
+![Screen cap](img/screenshot.png)
 
 On the right, clicking on Google, Facebook, or third-party cookies means that you are using those services on the the Internet. Clicking on the privacy tools can help you rein in your meta data.
 
