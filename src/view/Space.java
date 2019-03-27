@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.util.Vector;
@@ -37,9 +38,24 @@ public class Space extends JPanel implements MouseInputListener, Runnable {
 	private JLabel redundant;
 	private int redundantNumGen;
 	private int redundantNumRec;
+	
+	private JLabel legendTitle;
+	private JLabel legendColors;
 
 	private JLabel total;
+	
+	private String label_crit = "Critical (blue+green):";
+	private String label_red = "Redundant (orange+yellow):";
 
+	public int getSpawnAmount() {
+		return this.spawnAmount;
+	}
+	
+	public void setSpawnAmount(int newSpawnAmount) {
+		this.spawnAmount = newSpawnAmount;	
+	}
+	
+	
 	public Space() {
 		this.setLayout(new GridLayout(grid, grid));
 		this.setOpaque(true);
@@ -60,12 +76,18 @@ public class Space extends JPanel implements MouseInputListener, Runnable {
 		}
 		contents = new Vector<>();
 		blasts = new Vector<>();
-		this.critical = new JLabel("Critical: ");
+		this.critical = new JLabel(label_crit);
 		this.critical.setOpaque(true);
-		this.redundant = new JLabel("Redundant : ");
+		this.redundant = new JLabel(label_red);
 		this.redundant.setOpaque(true);
 		this.total = new JLabel("Total : ");
 		this.total.setOpaque(true);
+		this.legendTitle = new JLabel("Legend:");
+		this.legendTitle.setOpaque(true);
+//		this.legend = new JLabel("Comm:");
+//		this.legend.setOpaque(true);
+		this.legendColors = new JLabel("Content: blue| Meta: green| Content2: yellow | Meta2: cyan");
+		this.legendColors.setOpaque(true);
 		this.criticalNumGen = 0;
 		this.criticalNumRec = 0;
 		this.redundantNumGen = 0;
@@ -73,6 +95,7 @@ public class Space extends JPanel implements MouseInputListener, Runnable {
 	}
 
 	public void run() {
+		
 		int contentGen = 0;
 		int metadataGen = 0;
 		int spawn = 0;
@@ -152,8 +175,8 @@ public class Space extends JPanel implements MouseInputListener, Runnable {
 			int crit = (int) (((double) criticalNumRec / (double) criticalNumGen) * 100.0);
 			int red = (int) (((double) redundantNumRec / (double) redundantNumGen) * 100.0);
 			int tot = (int) (((double) crit / (double) red) * 100.0);
-			this.critical.setText("Critical: " + crit + " ");
-			this.redundant.setText("Redundant : " + red + " ");
+			this.critical.setText(label_crit + crit + " ");
+			this.redundant.setText(label_red  + red + " ");
 			this.total.setText("Total : " + (tot - 100) + " ");
 			try {
 				Thread.sleep(sleep);
@@ -201,5 +224,13 @@ public class Space extends JPanel implements MouseInputListener, Runnable {
 
 	public void mouseMoved(MouseEvent e) {
 
+	}
+
+	public Component getLegend() {
+		return legendTitle;
+	}
+
+	public Component getLegendColors() {
+		return legendColors;
 	}
 }
